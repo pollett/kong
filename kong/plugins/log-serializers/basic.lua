@@ -34,7 +34,7 @@ function _M.serialize(ngx)
       headers = ngx.resp.get_headers(),
       size = var.bytes_sent
     },
-    tries = (ctx.balancer_data or EMPTY).tries,
+    tries = ((ctx.proxy_request_state or EMPTY).proxy or EMPTY).try_data,
     latencies = {
       kong = (ctx.KONG_ACCESS_TIME or 0) +
              (ctx.KONG_RECEIVE_TIME or 0) +
