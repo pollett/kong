@@ -33,6 +33,10 @@ return {
       $$;
 
       ALTER TABLE IF EXISTS ONLY "plugins" ALTER "config" TYPE JSONB USING "config"::JSONB;
+
+
+
+      ALTER TABLE IF EXISTS ONLY "upstreams" ALTER "healthchecks" TYPE JSONB USING "healthchecks"::JSONB;
     ]],
 
     teardown = function(connector, helpers)

@@ -127,7 +127,7 @@ return {
         "service_id"   UUID                         REFERENCES "services"  ("id") ON DELETE CASCADE,
         "route_id"     UUID                         REFERENCES "routes"    ("id") ON DELETE CASCADE,
         "api_id"       UUID                         REFERENCES "apis"      ("id") ON DELETE CASCADE,
-        "config"       JSON                         NOT NULL,
+        "config"       JSONB                        NOT NULL,
         "enabled"      BOOLEAN                      NOT NULL,
 
         PRIMARY KEY ("id", "name")
@@ -152,7 +152,7 @@ return {
         "hash_on_cookie"        TEXT,
         "hash_on_cookie_path"   TEXT,
         "slots"                 INTEGER                      NOT NULL,
-        "healthchecks"          JSON
+        "healthchecks"          JSONB
       );
 
 
